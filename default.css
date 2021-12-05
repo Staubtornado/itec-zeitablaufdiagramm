@@ -1,0 +1,13 @@
+@font-face {
+    font-family: Youtube-Sans;
+    src: url(yt-sans-medium.ttf);
+}
+
+* {
+    font-family: Youtube-Sans, serif;
+    background-color: #666A86;
+    color: black;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding-left: 0.5%;
+}
