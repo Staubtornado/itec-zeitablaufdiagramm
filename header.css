@@ -1,5 +1,10 @@
-.logo img{
+.logo {
+    font-size: 40px;
+    color: black;
+}
+
+.logo img {
     float: left;
     margin-right: 5px;
-    width: 80px;
+    width: 60px;
 }
