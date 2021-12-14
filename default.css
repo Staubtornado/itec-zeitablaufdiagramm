@@ -25,21 +25,24 @@
 }
 
 .nav_button li {
-    transition: all 0.5s;
+    transition: 0.3s;
     margin-right: 5%;
     display: inline-block;
 }
 
 .nav_button button {
-    border-block-color: none;
+    cursor: pointer;
+    border-radius: 7%;
+    border-color: transparent;
+    background-color: #BFACB5;
     font-size: large;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-    width: 150px;
-    height: 150px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 12px 28px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0, rgba(255, 255, 255, 0.05) 0 0 0 1px inset;
+    width: 130px;
+    height: 130px;
 }
 
 .nav_button li:hover {
-    transition: all 0.5s;
+    transition: all 0.3s;
     transform: scale(1.1);
 }
 
