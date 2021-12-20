@@ -1,10 +1,15 @@
+.flex-containers {
+    display: flex;
+}
+
 .field {
     margin-top: 5%;
     margin-left: 5%;
     background-color: #BFACB5;
     border-radius: 25px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0 12px 28px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0, rgba(255, 255, 255, 0.05) 0 0 0 1px inset;
-    width: 1000px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 12px 28px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0, rgba(255, 255, 255, 0.05) 0 0 0 1px
+        inset;
+    width: 55%;
     height: 500px;
 }
 
@@ -24,12 +29,12 @@
 }
 
 .fields {
-    margin-top: 5%;
-    margin-left: 5%;
+    margin: 5% 5% 5% auto;
     background-color: #BFACB5;
     border-radius: 25px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0 12px 28px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0, rgba(255, 255, 255, 0.05) 0 0 0 1px inset;
-    width: 500px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 12px 28px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0, rgba(255, 255, 255, 0.05) 0 0 0 1px
+        inset;
+    width: 30%;
     height: 500px;
 }
 
@@ -42,7 +47,8 @@
 
 .fields img {
     background: transparent;
-    width: 400px;
-    margin-left: 5%;
-    margin-right: 5%;
+    width: 80%;
+    display:block;
+    margin-top: 5%;
+    margin-left: 10%;
 }
