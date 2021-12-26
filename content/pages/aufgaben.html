@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../styles/default.css">
     <link rel="stylesheet" href="../styles/header.css">
-    <title>Aufgaben</title>
+    <link rel="stylesheet" href="../styles/div-containers.css">
+    <title>Aufgaben | Zeitablaufdiagramm</title>
 </head>
 
 <header>
@@ -21,6 +22,85 @@
 </header>
 
 <body>
+<div id="1" class="container-left">
+    <p>Aufgabe 1</p>
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam amet, consequuntur culpa eveniet, facilis fugiat fugit iure nobis odio quae quam quibusdam quidem saepe, similique vel vero voluptas voluptatem voluptatibus voluptatum. Ad animi autem hic illo illum ipsum iusto laudantium magni maxime modi, necessitatibus nobis optio qui repudiandae saepe?
+    </div>
+    <button onclick="clickExerciseButton('1')">
+        Aufgabe anzeigen
+    </button>
+</div>
+
+<div id="2" class="container-right">
+    <p>Aufgabe 2</p>
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam amet, consequuntur culpa eveniet, facilis fugiat fugit iure nobis odio quae quam quibusdam quidem saepe, similique vel vero voluptas voluptatem voluptatibus voluptatum. Ad animi autem hic illo illum ipsum iusto laudantium magni maxime modi, necessitatibus nobis optio qui repudiandae saepe?
+    </div>
+    <button onclick="clickExerciseButton('2')">
+        Aufgabe anzeigen
+    </button>
+</div>
+
+<div id="3" class="container-left">
+    <p>Aufgabe 3</p>
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam amet, consequuntur culpa eveniet, facilis fugiat fugit iure nobis odio quae quam quibusdam quidem saepe, similique vel vero voluptas voluptatem voluptatibus voluptatum. Ad animi autem hic illo illum ipsum iusto laudantium magni maxime modi, necessitatibus nobis optio qui repudiandae saepe?
+    </div>
+    <button onclick="clickExerciseButton('3')">
+        Aufgabe anzeigen
+    </button>
+</div>
+
+<div id="4" class="container-right">
+    <p>Aufgabe 4</p>
+    <div>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam amet, consequuntur culpa eveniet, facilis fugiat fugit iure nobis odio quae quam quibusdam quidem saepe, similique vel vero voluptas voluptatem voluptatibus voluptatum. Ad animi autem hic illo illum ipsum iusto laudantium magni maxime modi, necessitatibus nobis optio qui repudiandae saepe?
+    </div>
+    <button onclick="clickExerciseButton('4')">
+        Aufgabe anzeigen
+    </button>
+</div>
+
+<script>
+    const defaultSize = document.getElementById('1').clientHeight;
+
+    function execute(full_size, div_tag) {
+        full_size = full_size - 10;
+        div_tag.style.height=`${full_size}px`;
+        return true;
+    }
+
+    function clickExerciseButton(elementID) {
+        const div_tag = document.getElementById(elementID);
+        let one_vh = window.innerHeight / 100;
+
+        let full_size = one_vh * 90;
+        if (div_tag.style.height==="90vh") {
+            div_tag.style.height=`${one_vh*90}px`
+            for (let i = 0; i < 100000000; i++) {
+                console.log("loop triggered")
+                console.log(div_tag.style.height)
+                if (parseInt(div_tag.style.height.slice(0, -2))>defaultSize) {
+                    console.log("if-statement in loop triggered")
+                    // full_size = full_size - 10;
+                    // div_tag.style.height=`${full_size}px`;
+                    console.log(div_tag.style.height)
+                    setTimeout(execute, 3000);
+                    execute(full_size, div_tag)
+                    continue;
+                }
+                break;
+            }
+            // div_tag.style.height=null;
+            div_tag.getElementsByTagName("button").item(0).innerHTML="Aufgabe anzeigen";
+        }
+        else {
+            div_tag.style.height="90vh";
+            div_tag.getElementsByTagName("button").item(0).innerHTML="Aufgabe einklappen";
+        }
+    }
+</script>
 
 </body>
 

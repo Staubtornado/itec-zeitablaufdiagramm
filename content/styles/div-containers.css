@@ -1,0 +1,73 @@
+.container-left {
+
+    margin: 5%;
+    width: 55%;
+    border-radius: 25px;
+    background-color: #BFACB5;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 12px 28px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0, rgba(255, 255, 255, 0.05) 0 0 0 1px
+        inset;
+}
+
+.container-right {
+    transition: all 0.3s;
+    margin: 5% 5% 5% 40%;
+    width: 55%;
+    border-radius: 25px;
+    background-color: #BFACB5;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 12px 28px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0, rgba(255, 255, 255, 0.05) 0 0 0 1px
+        inset;
+}
+
+.container-left p, .container-right p {
+    background: transparent;
+    font-size: 27px;
+    padding-left: 7px;
+    padding-top: 7px;
+}
+
+.container-left button, .container-right button {
+    color: #E5D0CC;
+    transition: all 0.3s;
+    background: #444554;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    margin-left: 80%;
+    padding: 1%;
+    width: 15%;
+    cursor: pointer;
+    border-radius: 25px;
+    border: transparent;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 12px 28px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0, rgba(255, 255, 255, 0.05) 0 0 0 1px
+        inset;
+}
+
+.container-left button:hover, .container-right button:hover {
+    transition: all 0.3s;
+    transform: scale(1.05);
+}
+
+
+.container-right div, .container-left div{
+    background: transparent;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 7%;
+    padding-bottom: 7%;
+}
+
+.container-center {
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;
+    border-radius: 25px;
+    background-color: #BFACB5;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 12px 28px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0, rgba(255, 255, 255, 0.05) 0 0 0 1px
+    inset;
+}
+
+.container-center p {
+    text-align: center;
+    background: transparent;
+    font-size: 27px;
+}
