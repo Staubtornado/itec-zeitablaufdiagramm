@@ -1,5 +1,6 @@
 .container-left {
-
+    transition: height 0.7s;
+    height: 300px;
     margin: 5%;
     width: 55%;
     border-radius: 25px;
@@ -9,7 +10,8 @@
 }
 
 .container-right {
-    transition: all 0.3s;
+    transition: height 0.7s;
+    height: 300px;
     margin: 5% 5% 5% 40%;
     width: 55%;
     border-radius: 25px;

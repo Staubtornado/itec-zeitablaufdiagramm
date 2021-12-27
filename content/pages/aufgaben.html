@@ -9,6 +9,22 @@
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/div-containers.css">
     <title>Aufgaben | Zeitablaufdiagramm</title>
+
+    <script>
+        function clickExerciseButton(elementID) {
+            const div_tag = document.getElementById(elementID);
+
+            if (div_tag.style.height==="600px") {
+                div_tag.style.height='300px';
+                div_tag.getElementsByTagName("button").item(0).innerHTML="Aufgabe anzeigen";
+            }
+            else {
+                div_tag.style.height='600px';
+                div_tag.getElementsByTagName("button").item(0).innerHTML="Aufgabe einklappen";
+            }
+        }
+    </script>
+
 </head>
 
 <header>
@@ -16,8 +32,8 @@
         <li><a class="logo" href="../../index.html">Zeitablaufdiagramm</a></li>
     </ul>
     <ul class="nav_button">
-        <li><a href="./erklaerungen.html"><button>Erklärungen</button></a></li>
-        <li><a href="./aufgaben.html"><button>Aufgaben</button></a></li>
+        <li><a href="./erklaerungen.html"><button><img src="../images/gluehbirne.png" alt="">Erklärungen</button></a></li>
+        <li><a href="./aufgaben.html"><button><img src="../images/buch.png" alt="">Aufgaben</button></a></li>
     </ul>
 </header>
 
@@ -61,46 +77,6 @@
         Aufgabe anzeigen
     </button>
 </div>
-
-<script>
-    const defaultSize = document.getElementById('1').clientHeight;
-
-    function execute(full_size, div_tag) {
-        full_size = full_size - 10;
-        div_tag.style.height=`${full_size}px`;
-        return true;
-    }
-
-    function clickExerciseButton(elementID) {
-        const div_tag = document.getElementById(elementID);
-        let one_vh = window.innerHeight / 100;
-
-        let full_size = one_vh * 90;
-        if (div_tag.style.height==="90vh") {
-            div_tag.style.height=`${one_vh*90}px`
-            for (let i = 0; i < 100000000; i++) {
-                console.log("loop triggered")
-                console.log(div_tag.style.height)
-                if (parseInt(div_tag.style.height.slice(0, -2))>defaultSize) {
-                    console.log("if-statement in loop triggered")
-                    // full_size = full_size - 10;
-                    // div_tag.style.height=`${full_size}px`;
-                    console.log(div_tag.style.height)
-                    setTimeout(execute, 3000);
-                    execute(full_size, div_tag)
-                    continue;
-                }
-                break;
-            }
-            // div_tag.style.height=null;
-            div_tag.getElementsByTagName("button").item(0).innerHTML="Aufgabe anzeigen";
-        }
-        else {
-            div_tag.style.height="90vh";
-            div_tag.getElementsByTagName("button").item(0).innerHTML="Aufgabe einklappen";
-        }
-    }
-</script>
 
 </body>
 
