@@ -27,6 +27,21 @@
     padding-top: 7px;
 }
 
+.container-left label, .container-right label {
+    background: transparent;
+}
+
+.container-left input, .container-right input {
+    border-radius: 25px;
+    border: 1px solid #444554;
+    padding: 10px;
+    margin-left: 30%;
+    width: 30%;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 12px 28px 0, rgba(0, 0, 0, 0.1) 0 2px 4px 0, rgba(255, 255, 255, 0.05) 0 0 0 1px
+        inset;
+}
+
 .container-left button, .container-right button {
     color: #E5D0CC;
     transition: all 0.3s;
