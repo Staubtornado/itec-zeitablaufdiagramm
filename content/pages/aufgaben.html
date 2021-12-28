@@ -11,16 +11,72 @@
     <title>Aufgaben | Zeitablaufdiagramm</title>
 
     <script>
+        function checkAnswer(elementID) {
+            const div_tag = document.getElementById(elementID);
+            console.log(div_tag)
+        }
+
+        function showSolution(elementID) {
+            const div_tag = document.getElementById(elementID);
+            console.log(div_tag)
+        }
+
         function clickExerciseButton(elementID) {
             const div_tag = document.getElementById(elementID);
 
             if (div_tag.style.height==="600px") {
                 div_tag.style.height='300px';
                 div_tag.getElementsByTagName("button").item(0).innerHTML="Aufgabe anzeigen";
+
+                ///////////////////////////////////////////////////////////////////////////////////
+
+                div_tag.getElementsByTagName("ul").item(0).remove();
+
             }
             else {
                 div_tag.style.height='600px';
                 div_tag.getElementsByTagName("button").item(0).innerHTML="Aufgabe einklappen";
+
+                ///////////////////////////////////////////////////////////////////////////////////
+
+                const list = document.createElement("UL");
+                list.style.listStyle="none";
+                list.style.display="flex";
+                list.style.background="transparent";
+                list.style.marginTop="30%";
+                list.style.marginLeft="65%"
+
+                const listItem1 = document.createElement("LI");
+                listItem1.style.background="transparent";
+
+                const listItem2 = document.createElement("LI");
+                listItem2.style.background="transparent";
+
+                const button1 = document.createElement("BUTTON");
+                button1.innerHTML="Antwort prüfen";
+                button1.id="checkAnswer";
+                button1.setAttribute('onclick', `checkAnswer(${elementID})`);
+                button1.style.background="#7F7B82";
+                button1.style.width="100%"
+                button1.style.margin="0";
+                button1.style.border="1px solid #444554";
+
+                const button2 = document.createElement("BUTTON");
+                button2.innerHTML="Lösung anzeigen";
+                button2.id="showSolution";
+                button2.setAttribute('onclick', `showSolution(${elementID})`);
+                button2.style.background="#E5D0CC";
+                button2.style.color="#172121";
+                button2.style.width="100%"
+                button2.style.margin="0";
+                button2.style.border="1px solid #444554";
+
+                listItem1.appendChild(button2);
+                listItem2.appendChild(button1);
+
+                list.appendChild(listItem1);
+                list.appendChild(listItem2);
+                div_tag.appendChild(list);
             }
         }
     </script>
