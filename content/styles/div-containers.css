@@ -73,6 +73,14 @@
     padding-bottom: 7%;
 }
 
+.container-right img, .container-left img{
+    background: transparent;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 5%;
+}
+
 .container-center {
     margin-left: 40%;
     margin-right: 40%;

@@ -1,8 +1,8 @@
 const answers = {
-    1: "1234",
-    2: "Kotmasters",
-    3: "Querdenken",
-    4: "Trump"
+    1: "x1*x2",
+    2: "x1+x2",
+    3: "x1*(x2+x3)",
+    4: "x1*x2*x3"
 };
 
 function checkAnswer(elementID) {
@@ -22,10 +22,9 @@ function checkAnswer(elementID) {
     answerField.style.marginLeft="84%";
     answerField.style.textAlign="left";
 
-    if (answers[elementID]===answer.value) {
+    if (answers[elementID]===answer.value.toLowerCase().replace(/\s/g,'')) {
         answerField.innerHTML="Richtig!";
         answerField.style.color="#2e8716";
-
     }
     else {
         answerField.innerHTML="Falsch!";
@@ -49,7 +48,7 @@ function showSolution(elementID) {
 function clickExerciseButton(elementID) {
     const div_tag = document.getElementById(elementID);
 
-    if (div_tag.style.height==="600px") {
+    if (div_tag.style.height==="720px") {
         div_tag.style.height='300px';
         div_tag.getElementsByTagName("button").item(0).innerHTML="Aufgabe anzeigen";
 
@@ -58,12 +57,24 @@ function clickExerciseButton(elementID) {
         div_tag.getElementsByTagName("button").item(1).remove();
         div_tag.getElementsByTagName("button").item(1).remove();
         div_tag.getElementsByTagName("label").item(0).remove();
+        div_tag.getElementsByTagName("img").item(0).remove();
+
+        try {
+            div_tag.getElementsByTagName('div').item(1).remove();
+        }
+        catch (TypeError) {
+            void(0);
+        }
     }
     else {
-        div_tag.style.height='600px';
+        div_tag.style.height='720px';
         div_tag.getElementsByTagName("button").item(0).innerHTML="Aufgabe einklappen";
 
         ///////////////////////////////////////////////////////////////////////////////////
+
+        const aufgabenstellung = document.createElement("IMG");
+        aufgabenstellung.setAttribute('src', `../images/a${elementID}.png`);
+        div_tag.appendChild(aufgabenstellung)
 
         const label = document.createElement("LABEL");
         const input = document.createElement("INPUT");
