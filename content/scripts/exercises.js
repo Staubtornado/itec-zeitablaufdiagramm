@@ -48,7 +48,7 @@ function showSolution(elementID) {
 function clickExerciseButton(elementID) {
     const div_tag = document.getElementById(elementID);
 
-    if (div_tag.style.height==="720px") {
+    if (div_tag.style.height==="740px") {
         div_tag.style.height='300px';
         div_tag.getElementsByTagName("button").item(0).innerHTML="Aufgabe anzeigen";
 
@@ -67,7 +67,7 @@ function clickExerciseButton(elementID) {
         }
     }
     else {
-        div_tag.style.height='720px';
+        div_tag.style.height='740px';
         div_tag.getElementsByTagName("button").item(0).innerHTML="Aufgabe einklappen";
 
         ///////////////////////////////////////////////////////////////////////////////////
