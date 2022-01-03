@@ -1,8 +1,8 @@
 const answers = {
-    1: "x1*x2",
-    2: "x1+x2",
-    3: "x1*(x2+x3)",
-    4: "x1*x2*x3"
+    1: ["x1*x2", "x2*x1"],
+    2: ["x1+x2", "x2+x1"],
+    3: ["x1*(x2+x3)", "(x2+x3)*x1", "(x3+x2)*x1", "x1*(x3+x2)"],
+    4: ["x1*x2*x3", "x1*x3*x2", "x2*x1*x3", "x2*x3*x2", "x3*x1*x2", "x3*x2*x1"]
 };
 
 function checkAnswer(elementID) {
@@ -22,7 +22,7 @@ function checkAnswer(elementID) {
     answerField.style.marginLeft="84%";
     answerField.style.textAlign="left";
 
-    if (answers[elementID]===answer.value.toLowerCase().replace(/\s/g,'')) {
+    if (answers[elementID].indexOf(answer.value.toLowerCase().replace(/\s/g,'')) > -1) {
         answerField.innerHTML="Richtig!";
         answerField.style.color="#2e8716";
     }
@@ -38,7 +38,7 @@ function showSolution(elementID) {
     let button = div_tag.getElementsByTagName("button").item(1);
 
     if (button.innerHTML==="Lösung anzeigen") {
-        button.innerHTML=answers[elementID];
+        button.innerHTML=answers[elementID][0];
     }
     else {
         button.innerHTML="Lösung anzeigen";
@@ -48,8 +48,8 @@ function showSolution(elementID) {
 function clickExerciseButton(elementID) {
     const div_tag = document.getElementById(elementID);
 
-    if (div_tag.style.height==="740px") {
-        div_tag.style.height='300px';
+    if (div_tag.style.height==="900px") {
+        div_tag.style.height='320px';
         div_tag.getElementsByTagName("button").item(0).innerHTML="Aufgabe anzeigen";
 
         ///////////////////////////////////////////////////////////////////////////////////
@@ -67,7 +67,7 @@ function clickExerciseButton(elementID) {
         }
     }
     else {
-        div_tag.style.height='740px';
+        div_tag.style.height='900px';
         div_tag.getElementsByTagName("button").item(0).innerHTML="Aufgabe einklappen";
 
         ///////////////////////////////////////////////////////////////////////////////////
